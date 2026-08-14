@@ -1,4 +1,4 @@
-import { usestate } from "react";
+import { useState } from "react";
 import "./StudentForm.css";
 
 function StudentForm() {
@@ -7,9 +7,10 @@ function StudentForm() {
     email: "",
     course: "",
     mobile: "",
+    Age:"",
   });
 
-  const handlechange = (e) => {
+  const handleChange = (e) => {
     setStudent({
       ...student,
       [e.target.name]: e.target.value,
@@ -17,35 +18,35 @@ function StudentForm() {
   };
 
   const handleSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
 
     alert(`
       Name: ${student.name}
       Email: ${student.email}
-      couse: ${student.course}
+      Course: ${student.course}
       Mobile: ${student.mobile}
-      `)
+      Age: ${student.Age}
+      `);
+    setStudent({
+      name: "",
+      email: "",
+      course: "",
+      mobile: "",
+      Age: "",
+    });
   }
 
-  setstudent({
-    name: "",
-    email: "",
-    course: "",
-    mobile: "",
-  });
-};
-return (
+  return (
   <div className="container">
-    <h1>Student Resgistration Form</h1>
-    <form />
+    <h1>Student Registration Form</h1>
 
-    <form onsubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         name="name"
         placeholder="Enter your name"
         value={student.name}
-        onChange={handlechange}
+        onChange={handleChange}
         required
       />
 
@@ -54,7 +55,7 @@ return (
         name="email"
         placeholder="Enter your email"
         value={student.email}
-        onChange={handlechange}
+        onChange={handleChange}
         required
       />
 
@@ -63,7 +64,7 @@ return (
         name="course"
         placeholder="Enter Course"
         value={student.course}
-        onChange={handlechange}
+        onChange={handleChange}
       />
 
       <input
@@ -71,12 +72,19 @@ return (
         name="mobile"
         placeholder="Enter Mobile Number"
         value={student.mobile}
-        onChange={handlechange}
+        onChange={handleChange}
       />
 
-    </form>
+      <input
+        type="text"
+        name="Age"
+        placeholder="Enter Age"
+        value={student.Age}
+        onChange={handleChange}
+      />
 
-    <button type="submit">Register</button>
+      <button type="submit">Register</button>
+    </form>
     
       <div className="preview">
         <h2>Student Preview</h2>
@@ -92,11 +100,12 @@ return (
         <p>
           <strong>Mobile: {student.mobile}</strong>
         </p>
+        <p>
+          <strong>Age: {student.Age}</strong>
+        </p>
       </div>
   </div>
-  
-);
+  );
+}
 
-
-
-export default studentform;
+export default StudentForm;

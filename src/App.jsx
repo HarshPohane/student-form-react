@@ -1,9 +1,9 @@
-import studentform from "./component/Studentform";
+import StudentForm from "./component/StudentForm";
 
 function App() {
     return (
         <>
-        <studentform/>
+        <StudentForm/>
         </>
     );
 }
