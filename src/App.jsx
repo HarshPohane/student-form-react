@@ -1,2 +1,11 @@
-import {usestate} from "react";
-import studentform from "./component/studentform";
+import studentform from "./component/Studentform";
+
+function App() {
+    return (
+        <>
+        <studentform/>
+        </>
+    );
+}
+
+export default App;

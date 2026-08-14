@@ -30,14 +30,14 @@ function StudentForm() {
   setstudent({
     name: "",
     email: "",
-    course: ""
-        mobile: "",
+    course: "",
+    mobile: "",
   });
 };
 return (
   <div className="container">
     <h1>Student Resgistration Form</h1>
-    <form/>
+    <form />
 
     <form onsubmit={handleSubmit}>
       <input
@@ -47,54 +47,56 @@ return (
         value={student.name}
         onChange={handlechange}
         required
-        />
-        
-        <input
+      />
+
+      <input
         type="text"
         name="email"
         placeholder="Enter your email"
         value={student.email}
         onChange={handlechange}
         required
-        />
+      />
 
-        <input
+      <input
         type="text"
         name="course"
         placeholder="Enter Course"
         value={student.course}
         onChange={handlechange}
-        />
+      />
 
-        <input
+      <input
         type="text"
         name="mobile"
         placeholder="Enter Mobile Number"
         value={student.mobile}
         onChange={handlechange}
-        />
+      />
 
     </form>
 
-  <button type="submit">Register</button>
-  <form>
-    <div className="preview">
-      <h2>Student Preview</h2>
-      <p>
-        <strong>Name:{student.name}</strong>
-      </p>
-      <p>
-        <strong>Email:{student.email}</strong>
+    <button type="submit">Register</button>
+    
+      <div className="preview">
+        <h2>Student Preview</h2>
+        <p>
+          <strong>Name:{student.name}</strong>
         </p>
-      <p>
-        <strong>Course: {student.course}</strong>
-      </p>
-      <p>
-        <strong>Mobile: {student.mobile}</strong>
+        <p>
+          <strong>Email:{student.email}</strong>
         </p>
-    </div>
-    </div>
-    );
-    }
+        <p>
+          <strong>Course: {student.course}</strong>
+        </p>
+        <p>
+          <strong>Mobile: {student.mobile}</strong>
+        </p>
+      </div>
+  </div>
+  
+);
 
-    export default studentform;
+
+
+export default studentform;
